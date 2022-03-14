@@ -82,9 +82,6 @@ public class ProductServlet extends HttpServlet {
         String q = request.getParameter("q");
         if (q != null) {
             products = productService.findAllProductByName(q);
-            request.setAttribute("products" , products);
-            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/list.jsp");
-            requestDispatcher.forward(request, response);
         }
         request.setAttribute("products" , products);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/list.jsp");
